@@ -7,7 +7,7 @@ const int AL=128/DT;
 const Fixed G=390;
 const Fixed MIN_V_DELTA=76; // вывелось экспериментально от G и DT
 
-Level level;
+Level& level= *new Level;
 Fixed viewX, viewY;
 
 
@@ -23,7 +23,7 @@ int cntUnits=MAX_UNITS, cntLoots=MAX_LOOTS, cntGibs=MAX_GIBS, cntBullets=MAX_BUL
 typedef tblib::list2d<MAX_ITEMS*4> IL;
 tblib::carray<tblib::carray<IL::yclass, HMMX>, HMMY> itemCells;
 
-IL itemList;
+IL& itemList= *new IL;
 Item* player;
 bool win=false;
 
@@ -324,7 +324,7 @@ struct Item : IL::xclass
 	}
 };
 
-tblib::pool<Item, MAX_ITEMS> items;
+tblib::pool<Item, MAX_ITEMS>& items= *new tblib::pool<Item, MAX_ITEMS>;
 
 bool Item::Valid ()
 {
@@ -374,7 +374,7 @@ public :
 namespace std { void swap (ActiveKeeper& l, ActiveKeeper& r) { l.Swap(r); }};
 
 
-tblib::array<ActiveKeeper, MAX_ITEMS> activeItems;
+tblib::array<ActiveKeeper, MAX_ITEMS>& activeItems= *new tblib::array<ActiveKeeper, MAX_ITEMS>;
 
 
 bool ItemInActiveArray (Item* it)

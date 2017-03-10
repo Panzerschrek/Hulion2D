@@ -494,7 +494,7 @@ void CreateForestBk (const Megamap& bkForest)
 	}
 }
 
-tblib::modarray<tblib::modarray<Fixed, 512>, 512> lava; // иначе стек переполнитсо
+tblib::modarray<tblib::modarray<Fixed, 512>, 512>& lava= *new tblib::modarray<tblib::modarray<Fixed, 512>, 512>;// иначе стек переполнитсо
 
 void CreateHellBk (const Megamap& bkHell)
 {	

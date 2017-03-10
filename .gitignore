@@ -17,6 +17,18 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Visual Studio Project Output directories
+Debug/*
+Release/*
+
+# Visual studio stuff
+*.user
+*.ncb
+*.suo
+
+# Genearete game data directory
+data/*
+
 # =========================
 # Operating System Files
 # =========================
